@@ -1,0 +1,42 @@
+<div class="container-form" *ngIf="semestre">
+
+    <h2>{{title}}</h2>
+    <form #semestreForm="ngForm" (ngSubmit)="onSubmit(semestreForm)">
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label for="nombre" class="sr-only" >Nombre</label>
+                <input type="text" class="form-control mb-2" id="nombre" placeholder="Semestre"  name="nombre" #name="ngModel" [(ngModel)]= "semestre.NOMBRE">
+            </div>
+            
+            <div class="col-auto">
+                <button type="submit" class="btn mb-1"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+            </div>
+            
+        </div>
+
+        
+     
+      
+    </form>
+</div>
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col" *ngIf = "status == 'si'">Editar</th>
+        <th scope="col" *ngIf = "status == 'si'">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let semestre of semestres; let i = index;">
+        <th scope="row">{{ i + 1}}</th>
+        <td>{{semestre.NOMBRE}}</td>
+        <td *ngIf = "status == 'si'"><a [routerLink]="['/editar-semestre',semestre.SEMESTRE_ID]"><i class="fa fa-pencil " aria-hidden="true"></i></a></td>
+        <td *ngIf = "status == 'si'"><a (click)="deleteSemestre(semestre.SEMESTRE_ID)" class="eliminar_semestre"><i class="fa fa-trash-o" aria-hidden="true"></i> </a></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+

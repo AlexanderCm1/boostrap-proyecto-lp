@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; font-family: 'Raleway', sans-serif;}
+
+app-root{
+    display: block;
+    height: 100%;
+}
+
+app-footer{
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.navbar{
+    background-color: #992e45;
+}
+
+.page-footer{
+background-color: #992e45;
+}
+.table,
+.container-form{
+    width: 50%;
+    margin: 0 auto;
+}
+.nav-link, .navbar-brand{
+    color: whitesmoke !important;
+}
+.eliminar_semestre{
+    cursor: pointer;
+}
+h2{
+    
+}
